@@ -1,7 +1,7 @@
 from django.urls import path,include
 from rest_framework.routers import DefaultRouter
 
-from .views import TransactionViewSet
+from .views import TransactionViewSet,dashboard_summary
 
 router=DefaultRouter()
 router.register(
@@ -12,5 +12,7 @@ router.register(
 )
 
 urlpatterns=[
+     path('summary/',dashboard_summary,name='dashboard-summary'),
     path('',include(router.urls)),
+   
 ]
